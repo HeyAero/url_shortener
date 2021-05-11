@@ -4,6 +4,8 @@ from werkzeug import exceptions
 import sqlite3
 from controllers import urls
 
+from url_generator import creator
+
 app = Flask(__name__)
 CORS(app)
 
@@ -14,8 +16,8 @@ def home():
   if request.method == 'POST':
     print(request.form)
     fetch_url = request.form['url']
-    # generated_url = creator.create_url(fetch_url)
-    return render_template('home.html', url=fetch_url)
+    generated_url = creator.create_url()
+    return render_template('home.html', url=generated_url)
   else:
     return render_template('home.html')
 
