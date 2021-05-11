@@ -25,7 +25,11 @@ def home():
 @app.route('/<string:short_url>', methods=['GET'])
 def redirect_user(short_url):
   url = urls.find_by_id(short_url)
-  return redirect(url[0][0])  
+  return redirect(url[0][0])
+
+@app.errorhandler(exceptions.NotFound)
+def handle_404(error):
+  return render_template('errors/404.html'), 404  
 
 def get_db():
   db = getattr(g, '_database', None)
