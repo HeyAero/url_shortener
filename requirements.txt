@@ -1,0 +1,6 @@
+-i https://pypi.org/simple
+flask-cors==3.0.9
+flask==1.1.2
+pytest==6.0.2
+pytest-cov==2.11.1
+werkzeug==1.0.1
