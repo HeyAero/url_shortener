@@ -7,6 +7,10 @@ def create(url_short, url_long):
 
 def find_by_id(id):
   try:
-    return app.query_db('select url from urls where id = (?);', (id,))
+    url = app.query_db('select url from urls where id = (?);', (id,))
+    if not url:
+      raise BadRequest(f"This short URL {id} does not lead anywhere :(  Try again, and include http:// in your request.")
+    else:
+      return url
   except:
     raise BadRequest(f"This short URL {id} does not lead anywhere :(  Try again, and include http:// in your request.")
