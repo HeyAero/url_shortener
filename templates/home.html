@@ -1,12 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="col my-auto">
   <h1>URL Shortener</h1>
   <form id="url-form" action="/" method="POST">
-    <input type="text" id="url" name="url" placeholder="Enter url... (include http:// at the beginning)" />
-    <input type="submit" id="url-submit" value="Submit URL">
+    <input type="text" class="form-control"  id="url" name="url" placeholder="Enter url... (include http:// at the beginning)" />
+    <input class="form-control mt-1"  type="submit" id="url-submit" value="Submit URL">
   </form>
   {% if url %}
-    <a href="/{{url}}">{{url}}</a>
+    <div class="short-url">
+      <p>Here is your generated URL:</p>
+      <a href="/{{url}}">{{url}}</a>
+      <div class="copy-wrapper">
+        <input id="url-link" value="{{url}}" />
+        <button id="copy-button">Copy Link</button>
+      </div>
+    </div>
   {% endif %}
+</div>
 {% endblock %}

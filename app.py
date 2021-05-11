@@ -14,7 +14,6 @@ DATABASE = "./database/database.db"
 @app.route('/', methods=['GET', 'POST'])
 def home():
   if request.method == 'POST':
-    print(request.form)
     fetch_url = request.form['url']
     generated_url = creator.create_url()
     urls.create(generated_url, fetch_url)
