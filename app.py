@@ -8,9 +8,15 @@ CORS(app)
 
 DATABASE = "./database/database.db"
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-  return render_template('home.html')
+  if request.method == 'POST':
+    print(request.form)
+    fetch_url = request.form['url']
+    # generated_url = creator.create_url(fetch_url)
+    return render_template('home.html', url=fetch_url)
+  else:
+    return render_template('home.html')
 
 def get_db():
   db = getattr(g, '_database', None)
