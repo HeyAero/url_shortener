@@ -9,4 +9,4 @@ def find_by_id(id):
   try:
     return app.query_db('select url from urls where id = (?);', (id,))
   except:
-    raise BadRequest(f"This short URL {id} does not lead anywhere :(")
+    raise BadRequest(f"This short URL {id} does not lead anywhere :(  Try again, and include http:// in your request.")
