@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, g, render_template
+from flask import Flask, jsonify, request, g, render_template, redirect
 from flask_cors import CORS
 from werkzeug import exceptions
 import sqlite3
@@ -21,6 +21,13 @@ def home():
     return render_template('home.html', url=generated_url)
   else:
     return render_template('home.html')
+
+@app.route('/<string:short_url>', methods=['GET'])
+def redirect_user(short_url):
+  url = urls.find_by_id(short_url)
+  print(url[0])
+  print(url[0][0])
+  return redirect(url[0][0])  
 
 def get_db():
   db = getattr(g, '_database', None)
@@ -50,4 +57,5 @@ def query_db(query, args=(), one=False):
 
 if __name__ == "__main__":
     app.run(debug=True)
-    init_db()
+    
+init_db()
