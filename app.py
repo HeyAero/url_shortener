@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, g, render_template
 from flask_cors import CORS
 from werkzeug import exceptions
 import sqlite3
+from controllers import urls
 
 app = Flask(__name__)
 CORS(app)
