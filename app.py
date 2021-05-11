@@ -10,7 +10,7 @@ DATABASE = "./database/database.db"
 
 @app.route('/')
 def home():
-  return jsonify({'message': 'Welcome!'}), 200
+  return render_template('home.html')
 
 def get_db():
   db = getattr(g, '_database', None)

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>URL Shortener</h1>
+  <form id="url-form" action="/" method="POST">
+    <input type="text" name="url" placeholder="Enter url..." />
+    <input type="submit" id="url-submit" value="Submit URL">
+  </form>
+  {% if url %}
+    <a href={{url}}>{{url}}</a>
+  {% endif %}
+{% endblock %}
