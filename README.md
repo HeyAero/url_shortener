@@ -17,7 +17,7 @@ Our web app allows users to submit an existing url and receive a shortened versi
 - `cd` into the repo and run the following commands:
     - Launch virtual environment: `pipenv shell`
     - Install required dependencies: `pipenv install -r "requirements.txt"` and `pipenv install`
-    - Initialise th database: `python inid_db.py`
+    - Initialise the database: `python inid_db.py`
     - Run dev environment: `pipenv run dev`
 - Visit `http://localhost:5000` to view the app in development mode!
 - Once using the app, enter a url name in the form field (make sure you include `http://` at the beginning of your input)
