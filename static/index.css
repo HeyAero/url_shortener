@@ -1,0 +1,32 @@
+h1 {
+  text-align: center;
+}
+
+.content {
+  min-height: 100vh;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+  text-align: center;
+}
+
+.short-url {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.short-url a {
+  font-size: 1.5rem;
+}
+
+.copy-wrapper {
+  margin-top: 15px;
+}
