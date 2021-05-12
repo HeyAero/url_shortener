@@ -28,7 +28,7 @@ Our web app allows users to submit an existing url and receive a shortened versi
 - Use the copy to clipboard button to manually copy and paste the shortened url into your browser
 - Visit a path that doesn't exist (there should be a custom error message)
     - You can do this by submitting an invalid url and clicking the generated hyperlink, or by adding a non-existent path to the base url
-        e.g. http://localhost/blah
+        e.g. http://localhost:5000/blah
 
 ***
 
